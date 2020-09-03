@@ -1,9 +1,10 @@
 ## Description
 
+![Virtual friend](virtualfriend-logo.jpg)
+
 ### Virtual-friend
 
 Tamagotchi like game.
-
 
 ### Preview
 
