@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, viewport-fit=cover">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="theme-color" content="#f2d7bf">
+  <meta name="format-detection" content="telephone=no">
+  <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+  
+  <title>Virtual friend</title>
+
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>👩🏻</text></svg>">
+
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/animate.min.css"/>
+  <link rel="stylesheet" href="css/style.min.css?ver=1.2">
+  
+
+  <script>
+    /*
+     * Drag and Drop
+     */
+    function allowDrop(ev) {
+      ev.preventDefault();
+    }
+
+    function drag(ev) {
+      ev.dataTransfer.setData('text', ev.target.id);
+    }
+
+    function drop(ev) {
+      ev.preventDefault();
+      var data = ev.dataTransfer.getData('text');
+      document.getElementById(data).click();
+    }
+  </script>
+</head>
+
+<body>
+  <div class="container">
+    <!-- Avatar settings (Modal) -->
+    <div class="modal-settings modal">
+      <div class="modal-content">
+
+        <p class="avatar-settings">👧🏻</p>
+        
+        <label for="name">Choose virtual friend name:</label>
+        <input type="text" name="name" id="name" placeholder="Name">
+      
+        <div class="options">
+          <button class="btn save-btn">SAVE</button>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Special item -->
+    <div class="nav">
+
+      <div class="score-container">
+        <p class="score">Score: <span class="score-number">0</span></p>
+
+        <!-- Bouns -->
+        <p class="bonus"></p>
+      </div>
+
+      <div class="menu">
+        <button class="menu-btn btn">MENU</button>
+      </div>
+    </div>
+
+
+    <!-- Special item -->
+    <button class="special-btn animate__animated" draggable="true" ondragstart="drag(event)">🎁</button>
+
+    <!-- Bubble -->
+    <div class="bubble">
+      <p class="speech-bubble animate__animated"></p>
+    </div>
+
+    <!-- Avatar -->
+    <div class="avatar-container">
+      <div class="avatar animate__animated" ondrop="drop(event)" ondragover="allowDrop(event)">👩🏻‍</div>
+      <div class="dog">🐶</div>
+      <div class="vacation">🏖</div>
+      <div class="gifts">🎉</div>
+    </div>
+    
+    <!-- Icons -->
+    <div class="icons-container">
+      <div class="icons">
+        <button id="age" class="age">❤️</button>
+        <p class="name">age</p>
+        <div class="progress">
+          <div class="bar age-bar"></div>
+        </div>
+        <p class="age-stat num">0</p>
+      </div>
+
+      <div class="icons">
+        <button id="hunger" class="hunger hunger-btn animate__animated" draggable="true" ondragstart="drag(event)">🍏</button>
+        <p class="name">hunger</p>
+        <div class="progress">
+          <div class="bar hunger-bar"></div>
+        </div>
+        <p class="hunger-stat num">0</p>
+      </div>
+
+      <div class="icons">
+        <button id="water" class="water water-btn animate__animated" draggable="true" ondragstart="drag(event)">💧</button>
+        <p class="name">water</p>
+        <div class="progress">
+          <div class="bar water-bar"></div>
+        </div>
+        <p class="water-stat num">0</p>
+      </div>
+
+      <div class="icons">
+        <button id="exercise" class="exercise exercise-btn animate__animated" draggable="true" ondragstart="drag(event)">⚽️</button>
+        <p class="name">exercise</p>
+        <div class="progress">
+          <div class="bar exercise-bar"></div>
+        </div>
+        <p class="exercise-stat num">0</p>
+      </div>
+
+      <div class="icons">
+        <button id="bladder" class="bladder bladder-btn animate__animated" draggable="true" ondragstart="drag(event)">🚽</button>
+        <p class="name">bladder</p>
+        <div class="progress">
+          <div class="bar bladder-bar"></div>
+        </div>
+        <p class="bladder-stat num">0</p>
+      </div>
+
+      <div class="icons">
+        <button id="hygiene" class="hygiene hygiene-btn animate__animated" draggable="true" ondragstart="drag(event)">🛀</button>
+        <p class="name">hygiene</p>
+        <div class="progress">
+          <div class="bar hygiene-bar"></div>
+        </div>
+        <p class="hygiene-stat num">0</p>
+      </div>
+
+      <div class="icons">
+        <button id="fun" class="fun fun-btn animate__animated" draggable="true" ondragstart="drag(event)">🎲</button>
+        <p class="name">fun</p>
+        <div class="progress">
+          <div class="bar fun-bar"></div>
+        </div>
+        <p class="fun-stat num">0</p>
+      </div>
+
+      <div class="icons">
+        <button id="energy" class="energy energy-btn animate__animated" draggable="true" ondragstart="drag(event)">🛌</button>
+        <p class="name">energy</p>
+        <div class="progress">
+          <div class="bar energy-bar"></div>
+        </div>
+        <p class="energy-stat num">0</p>
+      </div>
+    </div>
+
+    <!-- Options (Modal) -->
+    <div class="modal-menu modal">
+      <div class="modal-content">
+        <span class="close-btn">&times;</span>
+
+        <img src="images/virtualfriend-logo.png" alt="Virtual Friend">
+
+        <p class="best-score">Best score: <span class="best-score-number">0</span></p>
+
+        <div class="info">
+          <p class="version">Version: 1.0</p>
+          <p class="author">Author: <a href="https://www.matejnovak.si">Matej Novak</a></p>
+        </div>
+
+        <div class="options">
+          <button class="btn restart-btn">RESTART</button>
+          <button class="btn pause-btn">PAUSE</button>
+          <button class="btn music-btn">MUSIC OFF</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Animation -->
+  <ul class="circles">
+    <li></li><li></li>
+    <li></li><li></li>
+    <li></li><li></li>
+    <li></li><li></li>
+    <li></li><li></li>
+  </ul>
+
+  <audio class="bg-music" src="sounds/bg-music.mp3" autoplay loop></audio>
+  <script src="js/script.js?ver=1.2"></script>
+</body>
+</html>
